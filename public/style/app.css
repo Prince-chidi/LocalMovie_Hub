@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    
+    font-family: 'monts'; 
+    src: url('../font/Montserrat-Light.ttf') format('opentype'); 
+}
+   body{
+    margin: 0;
+    background-color: #ffffff;
+    padding: 0;
+    font-family: 'monts', sans-serif;
+   }
+
+   
+
+
+    header{
+       height: 80px;
+       width: 100%;
+       background-color: #148f43;
+       position: relative;
+       top: 0px;
+       left: 0px;
+    }
+
+    #header-txt{
+        font-family: fantasy;
+        font-size: 20px;
+        margin-left: 5%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffffff;
+        
+    }
+
+    nav{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        margin-top: 19px;
+    }
+
+    .tabs{
+        height: 30px;
+        width: 30%;
+        background-color: transparent;
+        border: 2px solid #15aa4e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+
+    main{
+        height: fit-content;
+        width: 95%;
+        position: relative;
+        background-color: transparent;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+        margin-bottom: 50px;
+
+    }
+    .container-movies{
+        height: 120px;
+        width: 100%;
+        background-color: rgb(252, 247, 247);
+        box-shadow: #00000041 0px 8px 38px 0px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .movie-banner{
+        height: 110px;
+        width: 90px;
+        background-color: rgba(173, 216, 230, 0.493);
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5px;
+        border-radius: inherit;
+    }
+
+    .movie-atributes{
+        height: 100px;
+        width: calc(100% - 115px);
+        position: relative;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+    }
+    .atributes{
+        font-family: 'monts', sans-serif;
+        width: 90%;
+        overflow-x: scroll;
+
+    }
+    .atributes::-webkit-scrollbar{
+        display: none;
+    }
+
+    .downloadbtn{
+        height: fit-content;
+        width: fit-content;
+        padding: 5px;
+        background-color: #15aa4e;
+        border-radius: 5px;
+        font-family: 'monts', sans-serif;
+        color: white;
+        font-size: 12px;
+       padding-left: 10px;
+       padding-right: 10px;
+       position: absolute;
+       bottom: 3px;
+       user-select: none;
+    }
+
+
+    .remainingdays{
+        position: absolute;
+        right: 0px;
+        bottom: 3px;
+        font-family: 'monts', sans-serif;
+        font-size: 11px;
+    }
+
+    .aboutmovie{
+        
+        height: fit-content;
+        width: fit-content;
+        padding: 3px;
+        background-color: white;
+        border-radius: 5px;
+        font-family: 'monts', sans-serif;
+        color: black;
+        font-size: 12px;
+       padding-left: 10px;
+       padding-right: 10px;
+       position: absolute;
+       left: 89px;
+       bottom: 3px;
+       border: 2px solid #15aa4e;
+       user-select: none;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+       
+    }
+    .movie-title{
+        font-weight: 1000;
+        white-space: nowrap;
+        overflow-x: scroll;
+        font-size: 14px;
+    }
+    .uploadicon{
+        height: 25px;
+        width: 25px;
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+        transform: rotate(-60deg);
+        margin-bottom: 5px;
+       
+    }
+
+    .uploadmat{
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        font-family: sans-serif;
+        position: absolute;
+        right: 5%;
+        align-items: center;
+        font-size: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        
+    }
+
+    .container-inputs{
+        height: fit-content;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'monts', sans-serif;
+
+    }
+
+    .inputs{
+        margin: 10px;
+        height: 30px;
+        font-size: 15px;
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.295);
+        text-indent: 5px;
+    }
+    .inputs:focus{
+        border: 2px solid #15aa4e;
+    }
+    label{
+        color: #15aa4e;
+        text-indent: 5%;
+    }
+
+    .uploadvideo{
+        height: y;
+    }
+
+    #uptxt{
+        height: fit-content;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #148f43;
+        opacity: 0;
+    }

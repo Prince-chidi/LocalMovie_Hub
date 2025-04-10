@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Movie</title>
+    <link rel="stylesheet" href="./style/app.css">
+</head>
+<body>
+   <header class="appHeader">
+     <p id="header-txt">Upload <span style="background-color: white; color:#148f43 ; padding: 5px; border-radius: 5px;">Movie</span></p>
+   </header>
+   <nav>
+    <div class="tabs"><a href="/">All Movies</a></div>
+    <div class="tabs"><a href="/naija">Naija Movies</a></div>
+    <div class="tabs"><a href="/foreign">Foreign Movies</a></div>
+   </nav>
+   
+   <main>
+       <form id="uploadForm" enctype="multipart/form-data">
+           <div class="container-inputs">
+               <label for="title">Name of Movie</label>
+               <input type="text" class="inputs" id="title" name="title" required>
+           
+               <label for="publisher">Your Name</label>
+               <input type="text" class="inputs" id="publisher" name="publisher" required>
+           
+               <label for="about">About Movie</label>
+               <textarea name="about" id="about" class="inputs" style="height: 100px;"></textarea>
+
+               <label for="type">Movie Type</label>
+               <select id="type" name="type" class="inputs" required>
+                   <option value="foreign">Foreign</option>
+                   <option value="naija">Naija</option>
+               </select>
+
+               <!-- File upload inputs with inline styling -->
+<label for="video" style="display: block; margin-bottom: 10px; font-size: 18px; color: #5A0B4D; font-weight: bold; margin-top: 20px;">Select Movie Video</label>
+<input type="file" id="video" name="video" accept="video" required 
+       style="width: 90%; height: 150px; display: block; margin: 0 auto 20px auto; background-color: #e0f7fa; text-align: center; border: 2px solid #0288d1; color: #0288d1; font-size: 18px; border-radius: 10px; padding: 20px; box-sizing: border-box; cursor: pointer;">
+
+<label for="cover" style="display: block; margin-bottom: 10px; font-size: 18px; color: #5A0B4D; font-weight: bold;">Select Cover Image</label>
+<input type="file" id="cover" name="cover" accept="image/*" required 
+       style="width: 90%; height: 150px; display: block; margin: 0 auto 20px auto; background-color: #fce4ec; text-align: center; border: 2px solid #d81b60; color: #d81b60; font-size: 18px; border-radius: 10px; padding: 20px; box-sizing: border-box; cursor: pointer;">
+
+<button type="submit" id="uploadBtn" 
+        style="width: 90%; height: 60px; display: block; margin: 20px auto; background-color: #148f43; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: bold; cursor: pointer; text-transform: uppercase;">
+    Upload Movie
+</button>
+   <div id="uptxt"  style="width: 90%; height: 60px;  margin: 20px auto; background-color: #148f43; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: bold; cursor: pointer; text-transform: uppercase;">uploading...</div>
+           </div>
+       </form>
+   </main>
+
+   <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+ 
+        // Get form data
+        const formData = new FormData(document.getElementById('uploadForm'));
+ 
+        try {
+            // Show "uptxt" (the text displayed during upload) and hide the upload button
+            document.getElementById('uptxt').style.opacity = '1';
+            document.getElementById('uploadBtn').style.display = 'none';
+ 
+            // Send the form data to the server
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData,
+            });
+ 
+            if (response.ok) {
+                alert('Movie uploaded successfully!');
+            } else {
+                const errorText = await response.text();
+                alert(`Failed to upload movie: ${errorText}`);
+            }
+        } catch (error) {
+            console.error('Error uploading movie:', error);
+            alert('Error uploading movie.');
+        } finally {
+            // After upload completes or fails, revert the button display and hide the upload text
+            document.getElementById('uptxt').style.opacity = '0';
+            document.getElementById('uploadBtn').style.display = 'block';
+        }
+    });
+ </script>
+ 
+</body>
+</html>
