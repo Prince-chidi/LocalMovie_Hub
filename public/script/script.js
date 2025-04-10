@@ -23,7 +23,7 @@ async function fetchMoviesByType(type) {
 
 // Function to dynamically display the movies on the page
 function displayMovies(movies) {
-    const movieContainer = document.querySelector('main'); // Assuming the movie blocks will be inside <main>
+    const movieContainer = document.querySelector('main');
     movieContainer.innerHTML = ''; // Clear previous movies
 
     movies.forEach(movie => {
@@ -100,7 +100,7 @@ function downloadMovie(fileUrl, filename) {
 
 // Call the correct function based on the page type
 document.addEventListener('DOMContentLoaded', function () {
-    const pageType = document.body.getAttribute('data-page-type'); // Use a custom attribute on body to identify the page
+    const pageType = document.body.getAttribute('data-page-type'); 
 
     if (pageType === 'home') {
         fetchAllMovies();
